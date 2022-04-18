@@ -1,10 +1,10 @@
 for(let i=1; i<=3 ; i++){
-let nombre = prompt("Ingrese nombre");
-let number = parseInt(prompt("Ingrese edad"));
+    let nombre = prompt("Ingrese nombre");
+    let number = parseInt(prompt("Ingrese edad"));
 
 if(number <= 12){
     alert (`${i} ${nombre}, su turno pasa al día lunes`);
-    let nombre2 = prompt("¿Desea ingresar otro nombre? si/no")
+    let nombre2 = prompt("¿Desea ingresar otro nombre? si/no");
         if((nombre2 == "no")||(nombre2 == "NO")){
             alert("Hasta luego, gracias.");
             break;
@@ -19,7 +19,7 @@ if(number <= 12){
         }
 }else if( number <= 20){
     alert (`${i} ${nombre}, su turno pasa al día martes`);
-    let nombre2 = prompt("¿Desea ingresar otro nombre? si/no")
+    let nombre2 = prompt("¿Desea ingresar otro nombre? si/no");
         if((nombre2 == "no")||(nombre2 == "NO")){
             alert("Hasta luego, gracias.");
             break;
@@ -34,7 +34,7 @@ if(number <= 12){
         }
 }else if( number <= 40){
     alert (`${i} ${nombre}, su turno pasa al día miercoles`);
-    let nombre2 = prompt("¿Desea ingresar otro nombre? si/no")
+    let nombre2 = prompt("¿Desea ingresar otro nombre? si/no");
         if((nombre2 == "no")||(nombre2 == "NO")){
             alert("Hasta luego, gracias.");
             break;
@@ -49,7 +49,7 @@ if(number <= 12){
         }
 }else{
     alert (`${nombre}, Ud. pasa sin turno`);
-    let nombre2 = prompt("¿Desea ingresar otro nombre? si/no")
+    let nombre2 = prompt("¿Desea ingresar otro nombre? si/no");
         if((nombre2 == "no")||(nombre2 == "NO")){
             alert("Hasta luego, gracias.");
             break;
