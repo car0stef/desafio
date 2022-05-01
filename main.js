@@ -1,15 +1,31 @@
-function totalNinio(cuanto , remera){
-    cuanto = parseInt(prompt("¿Cuántas remeras desea comprar?"));
-    remera = 1500;
-    let resultado = cuanto * remera;
-    return alert(`El total de su compra es: ${resultado} $`);
+function totalNinio(cuanto){
+    const modeloRemerasNinio = [ "Batman","Hulk","Superman"];
+        let modeloDeNinio = prompt(`Ahora ¿Qué modelo desea seleccionar?\n
+        ${modeloRemerasNinio[0]} (1)\n
+        ${modeloRemerasNinio[1]} (2)\n 
+        ${modeloRemerasNinio[2]} (3)\n
+        Presione cualquier tecla si no aún no eligió`);
+            cuanto = parseInt(prompt("¿Cuántas remeras desea comprar?"));
+                let resultado = cuanto * 1500;
+            return alert(`El total de su compra es: ${resultado}$ del modelito: ${modeloDeNinio}`);
+        
 }
-function totalAdulto(cuanto , remera){
+function totalAdulto(cuanto){
+    const modeloRemerasAdulto = [
+        {codigo: 1 , modelo: "Aries"},
+        {codigo: 2 , modelo: "Géminis"},
+        {codigo: 3 , modelo: "Capricornio"}
+    ];
+    let modeloDeAdulto = prompt(`Ahora ¿Qué modelo desea seleccionar?\n
+        ${modeloRemerasAdulto[0].modelo} con código ${modeloRemerasAdulto[0].codigo}\n
+        ${modeloRemerasAdulto[1].modelo} con código ${modeloRemerasAdulto[1].codigo}\n 
+        ${modeloRemerasAdulto[2].modelo} con código ${modeloRemerasAdulto[2].codigo}\n
+        Presione cualquier tecla si no aún no eligió`);
     cuanto = parseInt(prompt("¿Cuántas remeras desea comprar?"));
-    remera = 2300;
-    let resultado = cuanto * remera;
-    return alert(`El total de su compra es: ${resultado} $`);
+    let resultado = cuanto * 2300;
+    return alert(`El total de su compra es: ${resultado}$ del modelo ${modeloDeAdulto}`);
 }
+
 function saludo(){
     alert("Gracias por su compra. Vuelva Pronto");
 }
@@ -19,72 +35,24 @@ function talle(){
     
         if (tipoPersona == "1") {
             let ninio = prompt("¿Qué talle desea seleccionar? 4 , 6 , 8 , 10");
-            switch (ninio) {
-                case "4":
-                    alert(`Se agregó correctamente el talle ${ninio}`);
+                if((ninio == "4") || (ninio == "6") || (ninio == "8") || (ninio == "10")){
+                    alert(`Se agregó correctamente el talle ${ninio}`);                    
                     totalNinio();
-                    saludo();                        
-                    break;
-                    
-                case "6":
-                    alert(`Se agregó correctamente el talle ${ninio}`);
-                    totalNinio();
-                    saludo();                        
-                    break;
-
-                case "8":
-                    alert(`Se agregó correctamente el talle ${ninio}`);
-                    totalNinio();
-                    saludo();                        
-                    break;
-
-                case "10":
-                    alert(`Se agregó correctamente el talle ${ninio}`);
-                    totalNinio();
-                    saludo();                        
-                    break;
-            
-                default:
-                    alert("Ud. necesita ingresar un talle válido");                        
-                    break;
-            }
-        }
-        else if (tipoPersona == "2"){
-            let adulto = prompt("¿Qué talle desea seleccionar? S, M, L, XL");
-            
-                switch (adulto) {            
-                    case "s":
-                        alert(`Se agregó correctamente el talle ${adulto}`);
-                        totalAdulto();
-                        saludo();
-                        break;
-                        
-                    case "m":
-                        alert(`Se agregó correctamente el talle ${adulto}`);
-                        totalAdulto();
-                        saludo();
-                        break;
-
-                    case "l":
-                        alert(`Se agregó correctamente el talle ${adulto}`);
-                        totalAdulto();
-                        saludo();
-                        break;
-
-                    case "xl":
-                        alert(`Se agregó correctamente el talle ${adulto}`);
-                        totalAdulto();
-                        saludo();
-                        break;
-                
-                    default:
-                        alert("Ud. necesita ingresar una talla válida")
-                        break;
+                    saludo();
+                } else{
+                    alert("Ud. necesita ingresar un talle válido");
                 }
-        }
-        else{
-            alert("Debes ingresar un talle existente");
-        }
+            }
+            else if (tipoPersona == "2"){
+            let adulto = prompt("¿Qué talle desea seleccionar? S, M, L, XL");
+                if((adulto == "s") || (adulto == "m") || (adulto == "l") || (adulto == "xl")){
+                    alert(`Se agregó correctamente el talle ${adulto}`);
+                    totalAdulto();
+                    saludo();
+                }else{
+                    alert("Debes ingresar un talle existente");
+                }
+            }
 }
 
 for (let i = 0; i <=2 ; i++){
