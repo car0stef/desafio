@@ -1,9 +1,7 @@
 function totalNinio(cuanto){
     const modeloRemerasNinio = [ "Batman","Hulk","Superman"];
         let modeloDeNinio = prompt(`Ahora ¿Qué modelo desea seleccionar?\n
-        ${modeloRemerasNinio[0]} (1)\n
-        ${modeloRemerasNinio[1]} (2)\n 
-        ${modeloRemerasNinio[2]} (3)\n
+        ${(modeloRemerasNinio.join("  ****  "))}\n
         Presione cualquier tecla si no aún no eligió`);
             cuanto = parseInt(prompt("¿Cuántas remeras desea comprar?"));
                 let resultado = cuanto * 1500;
