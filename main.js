@@ -1,33 +1,58 @@
-function totalNinio(cuanto){
-    const modeloRemerasNinio = [ "Batman","Hulk","Superman"];
-        let modeloDeNinio = prompt(`Ahora ¿Qué modelo desea seleccionar?\n
-        ${(modeloRemerasNinio.join("  ****  "))}\n
-        Presione cualquier tecla si no aún no eligió`);
-            cuanto = parseInt(prompt("¿Cuántas remeras desea comprar?"));
-                let resultado = cuanto * 1500;
-            return alert(`El total de su compra es: ${resultado}$ del modelito: ${modeloDeNinio}`);
-        
-}
-function totalAdulto(cuanto){
-    const modeloRemerasAdulto = [
-        {codigo: 1 , modelo: "Aries"},
-        {codigo: 2 , modelo: "Géminis"},
-        {codigo: 3 , modelo: "Capricornio"}
+//Funcion para preguntar modelo de remera de Niño
+//Esta funcion está incluida en la funcion totalNinio
+function preguntaN(){
+    const modeloRemerasNinio = [
+        {codigo: "1", modelo: "Batman"},
+        {codigo: "2", modelo: "Hulk"},
+        {codigo: "3", modelo: "Superman"}
     ];
-    let modeloDeAdulto = prompt(`Ahora ¿Qué modelo desea seleccionar?\n
-        ${modeloRemerasAdulto[0].modelo} con código ${modeloRemerasAdulto[0].codigo}\n
-        ${modeloRemerasAdulto[1].modelo} con código ${modeloRemerasAdulto[1].codigo}\n 
-        ${modeloRemerasAdulto[2].modelo} con código ${modeloRemerasAdulto[2].codigo}\n
-        Presione cualquier tecla si no aún no eligió`);
+        let preguntaNinio = prompt(`Ahora ¿Qué modelito desea seleccionar?\n
+            ${modeloRemerasNinio[0].modelo}\n
+            ${modeloRemerasNinio[1].modelo}\n
+            ${modeloRemerasNinio[2].modelo}\n
+            Presione ${modeloRemerasNinio[0].codigo}, ${modeloRemerasNinio[1].codigo} o ${modeloRemerasNinio[2].codigo} para seleccionar`);
+        
+        let resultNinio = modeloRemerasNinio.find(x => x.codigo === preguntaNinio);
+            return alert(` Su modelo seleccionado es: ${resultNinio.modelo}`);
+}
+
+function totalNinio(cuanto){
+                cuanto = parseInt(prompt("¿Cuántas remeras desea comprar?"));
+                    let resultado = cuanto * 1500;
+                        preguntaN();
+                            return alert(`El total de su compra es: ${resultado}$`);
+}
+
+
+//Funcion para preguntar modelo de remera de Adulto
+//Esta funcion está incluida en la funcion totalAdulto
+function preguntaA(){
+    const modeloRemerasAdulto = [
+        {codigo: "1" , modelo: "Aries"},
+        {codigo: "2" , modelo: "Géminis"},
+        {codigo: "3" , modelo: "Capricornio"}
+    ];  
+        let preguntaAdulto = prompt(`Ahora ¿Qué modelo desea seleccionar?\n
+            ${modeloRemerasAdulto[0].modelo} con código ${modeloRemerasAdulto[0].codigo}\n
+            ${modeloRemerasAdulto[1].modelo} con código ${modeloRemerasAdulto[1].codigo}\n 
+            ${modeloRemerasAdulto[2].modelo} con código ${modeloRemerasAdulto[2].codigo}\n`);
+
+                let resultAdulto = modeloRemerasAdulto.find(x => x.codigo === preguntaAdulto);
+                    return alert(` Su modelo seleccionado es: ${resultAdulto.modelo}`);
+}
+
+function totalAdulto(cuanto){
     cuanto = parseInt(prompt("¿Cuántas remeras desea comprar?"));
-    let resultado = cuanto * 2300;
-    return alert(`El total de su compra es: ${resultado}$ del modelo ${modeloDeAdulto}`);
+        let resultado = cuanto * 2300;
+            preguntaA();
+                return alert(`El total de su compra es: ${resultado} $`);
 }
 
 function saludo(){
     alert("Gracias por su compra. Vuelva Pronto");
 }
 
+//Aqui empieza el programa
 function talle(){
     let tipoPersona = prompt("Comprar remeras para: Niño (1) Adulto (2)");    
     
@@ -53,6 +78,4 @@ function talle(){
             }
 }
 
-for (let i = 0; i <=2 ; i++){
-    talle();
-}
+talle();
