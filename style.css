@@ -1,0 +1,15 @@
+.divFlex{
+    display: flex;
+    background-color: rgb(34, 33, 33);
+    color: antiquewhite;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2%;
+}
+.sectionPrimero{
+    display: flex;
+    background-color: rgb(34, 33, 33);
+    color: antiquewhite;
+    padding: 2%;
+    justify-content: center;
+}
