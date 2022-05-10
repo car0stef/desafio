@@ -13,3 +13,10 @@
     padding: 2%;
     justify-content: center;
 }
+.pDescuento{
+    display: flex;
+    justify-content: center;
+    color: rgb(154, 0, 0);
+    background-color: bisque;
+    font-size: xx-large;
+}

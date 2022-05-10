@@ -19,4 +19,18 @@ for(const destacado of remeras){
                             </div>
                             `;
     document.body.append(remerasDiv);
+} 
+
+//Ejercicio de interacción 
+let suerte = prompt("Obtén descuento según tu suerte: \n Elige 1 o 2");
+if (suerte === "1") {
+    let oferta = document.createElement("div");    
+    oferta.innerHTML = `<p class="pDescuento" > Te tocó 10% de descuento en tu primera compra
+                        <br> Espero haber cumplido con la entrega ¡Gracias! </p>`;
+    document.body.append(oferta);
+}else if (suerte === "2"){
+    let oferta = document.createElement("div");    
+    oferta.innerHTML = `<p class="pDescuento" > Te tocó 25% de descuento en tu primera compra
+                        <br> Espero haber cumplido con la entrega ¡Gracias! </p>`;
+    document.body.append(oferta);
 }
